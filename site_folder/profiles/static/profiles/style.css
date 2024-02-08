@@ -1,0 +1,37 @@
+/* profiles/static/profiles/style.css */
+
+/* Стили для блока с информацией о профиле */
+.profile-info {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.profile-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    float: left;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+}
+
+/* Стили для списка просмотренных статей */
+.profile-info ul {
+    margin-top: 20px;
+}
+
+.profile-info ul li {
+    margin-bottom: 5px;
+}
+
+/* Стили для сообщения, если нет просмотренных статей */
+.profile-info .empty-message {
+    font-style: italic;
+    color: #999;
+}

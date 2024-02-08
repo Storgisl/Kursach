@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x_s=04j*h1dp03matb4n%@7-$=ejz0$cf*1e13li2a!3uiri3h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # список приложений отвечающих за страницы
+    # 'articles',
+    # 'courses',
+    # 'profiles',
+    # 'videos',
+    # 'users',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +61,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], # дополнительные пути поиска шаблонов
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+} # по дефолту sqlite3 стоит, потом как все +- будет работать воткнем postgre
 
 
 # Password validation

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ article.title }} - ML & DS Site
+{% endblock %}
+
+{% block content %}
+<article>
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+    <p>Автор: {{ article.author }}</p>
+    <p>Дата публикации: {{ article.published_date }}</p>
+</article>
+{% endblock %}

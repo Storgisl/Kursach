@@ -1,3 +1,5 @@
+// параметры запуска приложения
+
 {
     "git.autoRepositoryDetection": "subFolders",
     "breadcrumbs.enabled": true,

@@ -1,4 +1,5 @@
 {% extends 'main_page/base.html' %}
+{%load static%}
 
 {% block title %}
 {{ article.title }} - ML & DS Site
@@ -6,6 +7,7 @@
 
 {% block content %}
 <article>
+    <link rel="stylesheet" href="{% static 'css/articles.css' %}">
     <h2>{{ article.title }}</h2>
     <p>{{ article.content }}</p>
     <p>Автор: {{ article.author }}</p>

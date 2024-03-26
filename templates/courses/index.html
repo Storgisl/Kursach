@@ -1,0 +1,19 @@
+{% extends 'main_page/base.html' %}
+
+{% load compress %}
+{% load static %}
+
+{% block title %}
+Курсы - ML & DS Site
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Доступные курсы</h2>
+    <ul>
+        {% for course in courses %}
+        <li><a href="{% url 'course_detail' course.id %}">{{ course.title }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

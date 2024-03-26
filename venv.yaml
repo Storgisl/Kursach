@@ -1,0 +1,16 @@
+name: kursach
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python==3.12.2
+  - pip==23.3.1
+  - nodejs==18.18.2
+  - pip:
+    - django==4.2.10
+    - numpy==1.26.4
+    - pandas==2.2.0
+    - scikit-learn==1.4.0
+    - toml==0.10.2
+    - psycopg2-binary==2.9.9
+    - django-compressor==4.4

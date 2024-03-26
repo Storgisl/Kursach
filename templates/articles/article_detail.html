@@ -1,0 +1,21 @@
+{% extends 'main_page/base.html' %}
+{% load compress %}
+{% load static %}
+
+{% block title %}
+{{ article.title }} - ML & DS Site
+{% endblock %}
+
+{% block content %}
+<div class="p-10 text-green hover:text-yellow hover:bg-blue">
+{% compress css %}
+<link rel="stylesheet" href="{% static 'src/output.css' %}">
+{% endcompress %}   
+<article>
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+    <p>Автор: {{ article.author }}</p>
+    <p>Дата публикации: {{ article.published_date }}</p>
+</article>
+</div>
+{% endblock %}

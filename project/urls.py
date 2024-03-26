@@ -23,5 +23,7 @@ urlpatterns = [
     path('', include('apps.articles.urls')),
     path('', include('apps.courses.urls')),
     path('', include('apps.profiles.urls')),
-    path('', include('apps.videos.urls'))
+    path('', include('apps.videos.urls')),
+    path('', include('apps.reg_page.urls')),
+    path('', include('apps.log_page.urls')),
 ]

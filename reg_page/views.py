@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 # Import User UpdateForm, ProfileUpdatForm
 from .forms import UserRegisterForm
 # Create your views here.
+@login_required
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -11,7 +12,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Your account has been created! You are now able to log in')
-            return redirect('log_page:login')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'log_reg_page/reg_page.html', {'form': form})

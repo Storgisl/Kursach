@@ -1,5 +1,4 @@
 {% extends 'main_page/base.html' %}
-
 {% load compress %}
 {% load static %}
 
@@ -10,8 +9,8 @@
 {% block content %}
 <section>
     <h2>Профиль пользователя</h2>
-    <div class="profile-info">
-        <img src="{% static 'images/avatar1.jpg' %}" alt="Avatar">
+    <div>
+        <img class="rounded-full w-48 h-48 account-img" src="{{ user.profile.image.url }}" alt="Avatar">
         <p>Имя пользователя: {{ user.username }}</p>
         <p>Email: {{ user.email }}</p>
         <p>Зарегистрирован: {{ user.date_joined }}</p>

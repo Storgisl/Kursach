@@ -38,7 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'compressor'
+    'compressor',
+    'reg_page',
+    'log_page',
+    'articles',
+    'profiles',
+    'crispy_forms',
+    
     # список приложений отвечающих за страницы
     # 'articles',
     # 'courses',
@@ -141,9 +147,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = 'media/'
 # Compresion
 
 COMPRESS_ROOT = BASE_DIR / 'static'
@@ -151,3 +156,6 @@ COMPRESS_ROOT = BASE_DIR / 'static'
 COMPRESS_ENABLED = True
 
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
+LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'

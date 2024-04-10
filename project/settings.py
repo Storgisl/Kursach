@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'log_page',
     'articles',
     'profiles',
-    'crispy_forms',
-    
+    "crispy_forms",
+    "crispy_bootstrap4",
     # список приложений отвечающих за страницы
     # 'articles',
     # 'courses',
@@ -159,3 +159,6 @@ STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -1,2 +1,1 @@
-mkdir apps/$1
-python manage.py startapp $1 apps/$1
+npm run dev & python manage.py runserver

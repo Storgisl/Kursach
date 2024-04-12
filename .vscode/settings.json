@@ -53,5 +53,6 @@
             "comments": true,
             "strings": true
         }
-    }
+    },
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }

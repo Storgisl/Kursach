@@ -12,21 +12,18 @@
         {% endblock %}
         
     </title>
-    {% compress css %}
-    <link rel="stylesheet" href="{% static 'src/output.css' %}">
-    {% endcompress %}
 </head>
 <body>
     <header>
         <h1> ML & DS Site</h1>
         <nav>
-            <ul class="flex flex-1 flex space-x-4 items-center justify-center sm:items-stretch sm:justify-start">
+            <ul>
                 <li><a href="/">Главная</a></li>
                 <li><a href="/articles/">Статьи</a></li>
                 <li><a href="/profiles/">Профиль</a></li>
                 <li><a href="/videos/">Видео</a></li>
                 <li><a href="/courses/">Курсы</a></li>
-                <li><a href="/login/" class="underline text-blue-400">Войти</a>/<a href="/registration/"  class="underline text-blue-400">зарегистрироваться</a></li>
+                <li><a href="/login/">Войти</a>/<a href="/registration/">зарегистрироваться</a></li>
             </ul>
         </nav>
     </header>

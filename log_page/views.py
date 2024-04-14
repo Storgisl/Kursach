@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from profiles.forms import UserLoginForm
 
 # Create your views here.
-def log_page(request):
+def login_page(request):
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
         if form.is_valid():

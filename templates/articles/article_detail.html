@@ -8,9 +8,6 @@
 
 {% block content %}
 <div class="p-10 text-green hover:text-yellow hover:bg-blue">
-{% compress css %}
-<link rel="stylesheet" href="{% static 'src/output.css' %}">
-{% endcompress %}   
 <article>
     <h2>{{ article.title }}</h2>
     <p>{{ article.content }}</p>

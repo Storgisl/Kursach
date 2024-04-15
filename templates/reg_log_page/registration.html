@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
-    <link rel="stylesheet"  href="{% static 'reg_log_page/style_logging.css' %}">
+    <link rel="stylesheet"  href="{% static 'reg_log_page/css/style_register.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
@@ -32,8 +32,8 @@
             <form action="">
                 <ul>
                     <li class="back-btn-li">
-                        <a href="login">
-                            <img src="src/back_button.svg" alt="Back" class="back-btn">
+                        <a href="{% url 'login' %}">
+                            <img src="{% static 'reg_log_page/images/back_button.svg' %}" alt="Back" class="back-btn">
                         </a>
                     </li>
                     <li class="Reg-txt">Registration</li>
@@ -62,13 +62,13 @@
                 <button type="submit" class="btn">Sign up</button>
 
                 <div class="social-media-btns">
-                    <a href="#"><img src="src/vk_logo.svg" alt="VK" class="social-img"></a>
-                    <a href="#"><img src="src/twitter_logo.svg" alt="Twitter" class="social-img"></a>
-                    <a href="#"><img src="src/google_logo.svg" alt="Google" class="social-img"></a>
+                    <a href="#"><img src="{% static 'reg_log_page/images/vk_logo.svg' %}" alt="VK" class="social-img"></a>
+                    <a href="#"><img src="{% static 'reg_log_page/images/twitter_logo.svg' %}" alt="Twitter" class="social-img"></a>
+                    <a href="#"><img src="{% static 'reg_log_page/images/google_logo.svg' %}" alt="Google" class="social-img"></a>
                 </div>
         </div>
     </div>
-
+        </form>
     <div class="footer">
         Kivaari & Storgi ^C 2024
     </div>

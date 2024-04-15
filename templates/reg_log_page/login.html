@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet"  href="{% static 'reg_log_page/style_register.css' %}">
+    <link rel="stylesheet"  href="{% static 'reg_log_page/style_logging.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar">
         <ul>
-            <li>DS & ML</li>
+            <li><a href="{% url 'base'%}">DS & ML</a></li>
             <li class="nav-btn-box">
                 <button class="nav-btn">RU</button>
                 <button class="nav-btn">EN</button>
@@ -46,9 +46,9 @@
                 <button type="submit" class="btn">Start journey</button>
 
                 <div class="social-media-btns">
-                    <a href="#"><img src="src/vk_logo.svg" alt="VK" class="social-img"></a>
-                    <a href="#"><img src="src/twitter_logo.svg" alt="Twitter" class="social-img"></a>
-                    <a href="#"><img src="src/google_logo.svg" alt="Google" class="social-img"></a>
+                    <a href="#"><img src="{% static 'reg_log_page/images/vk_logo.svg' %}" alt="VK" class="social-img"></a>
+                    <a href="#"><img src="{% static 'reg_log_page/images/twitter_logo.svg' %}" alt="Twitter" class="social-img"></a>
+                    <a href="#"><img src="{% static 'reg_log_page/images/google_logo.svg' %}" alt="Google" class="social-img"></a>
                 </div>
         </div>
     </div>

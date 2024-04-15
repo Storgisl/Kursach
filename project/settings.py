@@ -157,7 +157,7 @@ COMPRESS_ENABLED = True
 
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'base'
 LOGIN_URL = 'login'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"

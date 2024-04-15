@@ -26,7 +26,7 @@ urlpatterns = [
     path('', include('courses.urls'), name='courses'),
     path('', include('profiles.urls'), name='profile'),
     path('', include('videos.urls'), name='videos'),
-    path('', include('reg_page.urls'), name='registertration'),
+    path('', include('reg_page.urls'), name='registration'),
     path('', include('log_page.urls'), name='login'),
 ] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
 

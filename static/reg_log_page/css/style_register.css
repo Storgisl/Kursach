@@ -36,6 +36,7 @@ h2 {
     border-radius: 60px;
     padding: 10px;
     background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет */
 }
 
 .wrapper {
@@ -100,7 +101,7 @@ h2 {
 }
 
 .input-box {
-    width: 48%; /* Ширина 48% для двух input-box в одной строке с учетом отступа */
+    width: 48%;
 }
 
 .input-box input {

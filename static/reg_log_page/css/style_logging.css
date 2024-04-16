@@ -29,6 +29,7 @@ h2 {
     border-radius: 60px;
     padding: 10px;
     background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Горизонтальное смещение, вертикальное смещение, размытие, цвет */
 }
 
 .wrapper {
@@ -40,10 +41,10 @@ h2 {
     align-items: center;
     border-radius: 60px;
     outline: 10px;
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
-    justify-content: center; /* Added */
-    align-items: center; /* Added */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper h1 {

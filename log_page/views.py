@@ -13,7 +13,7 @@ def login_page(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse('Authenticated successfully')
+                    return render(request, "main_page/base.html")
                 else:
                     return HttpResponse('Disabled account')
             else:

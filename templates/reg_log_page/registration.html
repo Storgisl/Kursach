@@ -51,15 +51,19 @@
                 
                 <div class="lower-row-input">
                     <div class="input-box">
-                        {{ user_form.password }}
+                        {{ user_form.password1 }}
                     </div>
+
+                    <div class="input-box">
+                        {{ user_form.password2 }}
+                    </div>    
         
-                    <!-- <div class="input-box">
-                        <input type="date" placeholder="Birth date" required>
-                    </div> -->
+                    <div class="input-box">
+                        {{ user_form.birthday }}
+                    </div>
                 </div>
     
-                <button type="submit" class="btn" href="..\main_page\main.html">Sign up</button> /* Отредач тут переход на главную */
+                <button type="submit" class="btn" href="{% url 'base' %}">Sign up</button>
 
                 <div class="social-media-btns">
                     <a href="#"><img src="{% static 'reg_log_page/images/vk_logo.svg' %}" alt="VK" class="social-img"></a>

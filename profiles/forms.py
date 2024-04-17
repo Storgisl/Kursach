@@ -7,20 +7,28 @@ from .models import Profile
 
 
 class UserRegisterForm(forms.Form):
+    email = forms.EmailField(widget= forms.TextInput(
+                            attrs={
+                                'placeholder':'Email',
+                                }),)
     username = forms.CharField(
                         max_length=30, 
                         required=True,
                         widget= forms.TextInput
                            (attrs={
-                               'placeholder':'email or username',
+                               'placeholder':'Login',
                                }))
     
     password1 = forms.CharField(
-                            widget=forms.PasswordInput(), 
+                            widget=forms.PasswordInput(attrs={
+                                'placeholder':'password',
+                                }), 
                             required=True)
     
     password2 = forms.CharField(
-                            widget=forms.PasswordInput(), 
+                            widget=forms.PasswordInput(attrs={
+                                'placeholder':'repeat your password',
+                                }), 
                             required=True)
     
     birthday = forms.DateField(label="Date of Birth",
@@ -28,6 +36,12 @@ class UserRegisterForm(forms.Form):
                                 widget=forms.DateInput(
                                 format="%Y-%m-%d", attrs={"type": "date"}),
                                 input_formats=["%Y-%m-%d"])
+    
+    def clean_password2(self):
+        cd = self.cleaned_data
+        if cd['password1'] != cd['password2']:
+            raise forms.ValidationError('Passwords don\'t match.')
+        return cd['password2']
 
 class UserLoginForm(forms.Form):
     username = forms.CharField(max_length=30, widget= forms.TextInput(

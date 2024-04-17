@@ -1,25 +1,35 @@
-<!-- ml_ds_site/templates/index.html -->
-{% extends 'main_page/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet"  href="{% static 'main_page/css/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
 
-{% block title %}
-Главная страница - ML & DS Site
-{% endblock %}
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'base ' %}">DS & ML</a></li>
+            <li class="nav-btn-box">
+                <a class="nav-btn" href="{% url 'articles' %}">ARTICLES</a>
+                <a class="nav-btn" href="{% url 'courses' %}">COURSES</a>
+                <a class="nav-btn" href="{% url 'videos' %}">VIDEOS</a>
+                <a class="nav-btn" href="{% url 'profile' %}">PROFILE</a>
+            </li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+    <div class="footer">
+        Kivaari & Storgi ^C 2024
+    </div>
 
-{% block content %}
-<section>
-    <h2>Описание функционала сайта</h2>
-    <p>Добро пожаловать на ML & DS Site! Этот сайт предназначен для изучения машинного обучения (ML) и науки о данных (DS). Здесь вы найдете статьи, видео и курсы по различным аспектам ML и DS, а также сможете следить за своим прогрессом.</p>
-</section>
+</body>
 
-<section>
-    <h2>Вход на сайт</h2>
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        <label for="username">Имя пользователя:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Пароль:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Войти">
-    </form>
-</section>
-{% endblock %}
+</html>

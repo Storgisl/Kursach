@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-{% load compress %}
-{% load static %}
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}
-        ML & DS Site
-        {% endblock %}
-        
-    </title>
+    <title>Login Page</title>
+    <link rel="stylesheet"  href="{% static 'main_page/css/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1> ML & DS Site</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Главная</a></li>
-                <li><a href="/articles/">Статьи</a></li>
-                <li><a href="/profiles/">Профиль</a></li>
-                <li><a href="/videos/">Видео</a></li>
-                <li><a href="/courses/">Курсы</a></li>
-                <li><a href="/login/">Войти</a>/<a href="/registration/">зарегистрироваться</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
 
-    <footer>
-        <p>Copyright &copy; 2024 kivaari / Storgisl</p>
-    </footer>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\main_page\main.html">DS & ML</a></li>
+            <li class="nav-btn-box">
+                <a class="nav-btn" href="{% url 'articles' %}">ARTICLES</a>
+                <a class="nav-btn" href="{% url 'courses' %}">COURSES</a>
+                <a class="nav-btn" href="{% url 'videos' %}">VIDEOS</a>
+                <a class="nav-btn" href="{% url 'profile' %}">PROFILE</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h2>About DS & ML community</h2>
+
+    <div class="box">
+        <div class="h3-container">
+            <h3>
+                ML & DS is not just an aggregator site, it is your guide to the exciting world of machine learning and data science. We collect the best courses, articles and tutorial videos for you to help you start or improve your knowledge in this exciting field. Regardless of your level — whether you are a beginner or an experienced specialist — we have content that will help you uncover the full depth and power of machine learning and data analysis.
+                The world of machine learning and data science is constantly changing and evolving, and we are carefully monitoring these changes. Our team is constantly updating and improving the platform to provide you with the most relevant and useful materials. We strive to make your experience using our platform as comfortable and immersive as possible.
+                Start your exciting journey into the world of machine learning and data science today! Dive into the depths of algorithms, models and data analysis techniques, and let your skills develop at an incredible speed supported by our platform.
+            </h3>
+        </div>
+
+        <div class="img-container">
+            <img src="{% static 'main_page/images/1.jpg' %}" alt="Image">
+        </div>
+    </div>
+
+    <div class="footer">
+        Kivaari & Storgi ^C 2024
+    </div>
+
 </body>
+
 </html>

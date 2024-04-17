@@ -1,29 +1,86 @@
-/* videos/static/videos/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Kranky&display=swap');
 
-/* Стили для списка видео */
-.video {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kranky", sans-serif;
 }
 
-.video h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #F9F9F9;
+    font-weight: 400;
 }
 
-.video p {
-    font-size: 1.1em;
-    line-height: 1.6;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: calc(100% - 562px);
+    top: 0;
+    font-family: "Kranky", sans-serif;
 }
 
-/* Стили для ссылок на видео */
-.video a {
-    color: #007bff;
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text_decoration: none;
+    font-size: 48px;
+    font-family: "Kranky", sans-serif;
+}
+
+.navbar a {
+    color: #000000;
     text-decoration: none;
+    font-family: "Kranky", sans-serif;
 }
 
-.video a:hover {
-    text-decoration: underline;
+.navbar .nav-btn-box {
+    margin-left: auto;
+}
+
+.navbar .nav-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 5px;
+    margin-left: 50px;
+    font-size: 24px;
+    position: relative;
+    font-family: "Kranky", sans-serif;
+}
+
+.navbar .nav-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.6s ease;
+    font-family: "Kranky", sans-serif;
+}
+
+.navbar .nav-btn:hover::after {
+    background-color: #000000; /* Цвет подчеркивания при наведении */
+    font-family: "Kranky", sans-serif;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
 }

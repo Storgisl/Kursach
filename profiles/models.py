@@ -1,15 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from django.utils import timezone
 # Create your models here.
 
 #username, email, password, date_registred, profile avatar, history of articles
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # email = models.EmailField()
-    # password = models.CharField()
-    # date_registred = models.DateTimeField()
+    email = models.EmailField(max_length=140, default='')
+    password = models.CharField(max_length=20)
+    date_registred = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):

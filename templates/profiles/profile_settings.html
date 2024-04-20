@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Profile Settings</title>
     <link rel="stylesheet"  href="profile_settings.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +23,57 @@
         </ul>
     </nav>
 
-    <div>
-        <a href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\profiles\profile_m.html">Back to profile</a>
+    <div class="header">
+        <div class="settings-div">
+            <a href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\profiles\profile_m.html"><img src="back.svg" alt="Settings" class="settings-img"></a>
+        </div>
+        <h1>
+            Setup your profile
+        </h1>
     </div>
+
+
+    <div class="profile-pic-div">
+        <h2>
+            Kivaari
+        </h2>
+        <img src="cat.jpg" alt="Profile picture" class="profile-pic">
+        <button class="edit-pro-pic-btn">
+            UPDATE PROFILE PICTURE
+        </button>
+    </div>
+
+    <div class="soc-edit">
+        <div class="img">
+            <img src="gender.svg" alt="gender" class="soc-img">
+            <img src="vk.svg" alt="vk" class="soc-img">
+            <img src="twitter.svg" alt="twitter" class="soc-img">
+            <img src="github.svg" alt="github" class="soc-img">
+            <img src="telegram.svg" alt="telegram" class="soc-img">
+        </div>
+        <div class="fields">
+            <form action="." method="post">
+                <div class="input-box">
+                    <input type="text" placeholder="Gender">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Vk link">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Twitter link">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Github link">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Telegram link">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+
+    <button type="submit" class="save"> SAVE</button>
 
     <div class="footer">
         Kivaari & Storgi ^C 2024

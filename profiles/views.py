@@ -29,3 +29,6 @@ def profile(request):
     }
 
     return render(request, 'profiles/profile.html', context)
+
+def profile_settings(request):
+    return render(request, 'profiles/profile_settings.html')

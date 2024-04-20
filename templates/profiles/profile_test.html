@@ -1,9 +1,19 @@
+{% extends 'main_page/index.html' %}
 {% load compress %}
 {% load static %}
 
 {% block title %}
 Профиль - ML & DS Site
 {% endblock %}
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet"  href="{% static 'profiles/css/profile.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
+</head> -->
 
 {% block content %}
 <section>
@@ -22,5 +32,8 @@
         <li>Пользователь еще не просматривал статьи.</li>
         {% endfor %}
     </ul>
+    <div>
+        <a href="C{% url 'profile_settnings' %}">Profile Settings</a>
+    </div>
 </section>
 {% endblock %}

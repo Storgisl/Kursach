@@ -8,9 +8,9 @@ from django.utils import timezone
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    email = models.EmailField(max_length=140, default='')
+    email = models.EmailField(default='')
     password = models.CharField(max_length=20)
-    date_registred = models.DateTimeField(auto_now_add=True)
+    birthday = models.DateField(auto_now=False, auto_now_add=False)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):

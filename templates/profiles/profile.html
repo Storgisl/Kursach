@@ -1,39 +1,93 @@
+
 {% extends 'main_page/index.html' %}
-{% load compress %}
 {% load static %}
 
-{% block title %}
-Профиль - ML & DS Site
-{% endblock %}
-<!-- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet"  href="{% static 'profiles/css/profile.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
-</head> -->
-
 {% block content %}
-<section>
-    <h2>Профиль пользователя</h2>
-    <div>
-        <img src="{{ user.profile.image.url }}" alt="Avatar">
-        <p>Имя пользователя: {{ user.username }}</p>
-        <p>Email: {{ user.email }}</p>
-        <p>Зарегистрирован: {{ user.date_joined }}</p>
+    <div class="header">
+        <h1>
+            Your awesome profile
+        </h1>
+
+        <div class="settings-div">
+            <a href="{% url 'settings' %}"><img src="{% static 'profiles/images/settings.svg' %}" alt="Settings" class="settings-img"></a>
+        </div>
     </div>
-    <h3>Просмотренные статьи:</h3>
-    <ul>
-        {% for article in viewed_articles %}
-        <li>{{ article.title }}</li>
-        {%empty%}
-        <li>Пользователь еще не просматривал статьи.</li>
-        {% endfor %}
-    </ul>
-    <div>
-        <a href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\profiles\profile_settings.html">Profile Settings</a>
+    
+    <div class="profile-div">
+        <div class="profile-pic-div">
+            <img src="{{ user.profile.image.url }}" alt="Avatar" class="profile-pic">
+        </div>
+
+        <div class="profile-info">
+            <div class="nick-gen">
+                <span class="nickname">{{ user.username }}</span>
+                <span class="gender">he/him</span>
+            </div>
+
+            <div class="social">Social networks</div>
+
+            <div class="socnick">
+                <a href="#"><img src="{% static 'profiles/images/vk.svg' %}" alt="VK" class="social-img"> @kivaari</a>
+            </div>
+
+            <div class="socnick">
+                <a href="#"><img src="{% static 'profiles/images/twitter.svg' %}" alt="Twitter" class="social-img"> @kivaari</a>
+            </div>
+
+            <div class="socnick">
+                <a href="#"><img src="{% static 'profiles/images/github.svg' %}" alt="Github" class="social-img"> @kivaari</a>
+            </div>
+
+            <div class="socnick">
+                <a href="#"><img src="{% static 'profiles/images/telegram.svg' %}" alt="Telegram" class="social-img"> @kivaari</a>
+            </div>
+
+        </div>
+        
     </div>
-</section>
+
+    <div class="graph-box">
+        <h2>
+            YEAR ACTIVITY
+        </h2>
+
+        <div class="graph">
+            <ul class="months">
+                <li>Jan</li>
+                <li>Feb</li>
+                <li>Mar</li>
+                <li>Apr</li>
+                <li>May</li>
+                <li>Jun</li>
+                <li>Jul</li>
+                <li>Aug</li>
+                <li>Sep</li>
+                <li>Oct</li>
+                <li>Nov</li>
+                <li>Dec</li>
+            </ul>
+            <ul class="days">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+            <ul class="squares">
+                <script>
+                    const squares = document.querySelector('.squares');
+                    for (var i = 1; i < 365; i++) {
+                    const level = Math.floor(Math.random() * 3);  
+                    squares.insertAdjacentHTML('beforeend', `<li data-level="${level}"></li>`);
+                    }
+                </script>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        Kivaari & Storgi ^C 2024
+    </div>
 {% endblock %}

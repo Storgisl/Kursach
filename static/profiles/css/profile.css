@@ -104,20 +104,20 @@ h1 {
     margin-top: 68px !important;
     width: 691px;
     height: 270px;
-    margin: auto; /* Центрируем по горизонтали */
-    display: flex; /* Для выравнивания по центру */
-    align-items: center; /* Центрируем по вертикали */
-    border: none; /* Добавляем обводку */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border: none;
     margin-bottom: 41px;
 }
 
 .profile-pic-div {
     width: 264px;
     height: 264px;
-    border: 1px solid #000; /* Обводка вокруг картинки */
-    border-radius: 15%; /* Делаем круглой форму */
-    overflow: hidden; /* Обрезаем лишние части картинки */
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+    border: 1px solid #000;
+    border-radius: 15%;
+    overflow: hidden;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
     margin-right: 123px;
 }
 
@@ -127,17 +127,17 @@ h1 {
 }
 
 .profile-info {
-    flex-grow: 1; /* Занимает всю оставшуюся ширину */
+    flex-grow: 1;
     height: 100%;
     display: flex;
-    flex-direction: column; /* Элементы располагаются в столбец */
-    align-items: flex-start; /* Выравниваем элементы по левому краю */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .nick-gen {
     display: flex;
-    justify-content: space-between; /* Равномерное распределение между элементами */
-    width: 100%; /* Занимаем всю доступную ширину */
+    justify-content: space-between;
+    width: 100%;
 }
 
 .nickname {
@@ -148,7 +148,7 @@ h1 {
 .gender {
     font-size: 32px;
     color: #A4A4A4;
-    margin-left: auto; /* Прижимаем к правому краю */
+    margin-left: auto;
 }
 
 .social {
@@ -159,16 +159,16 @@ h1 {
 
 .socnick {
     display: flex;
-    align-items: center; /* Выравниваем элементы по вертикали */
+    align-items: center;
     margin-top: 10px;
 }
 
 .socnick a {
     font-size: 20px;
     color: black;
-    text-decoration: none; /* Убираем подчеркивание */
-    display: flex; /* Делаем контейнеры ссылок flex-контейнерами */
-    align-items: center; /* Выравниваем текст по вертикали с изображениями */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .social-img {
@@ -204,18 +204,18 @@ h2 {
 .months {
     display: grid;
     list-style: none;
-    grid-template-columns: calc(var(--week-width) * 4) /* Jan */
-                            calc(var(--week-width) * 4) /* Feb */
-                            calc(var(--week-width) * 4) /* Mar */
-                            calc(var(--week-width) * 5) /* Apr */
-                            calc(var(--week-width) * 4) /* May */
-                            calc(var(--week-width) * 4) /* Jun */
-                            calc(var(--week-width) * 5) /* Jul */
-                            calc(var(--week-width) * 4) /* Aug */
-                            calc(var(--week-width) * 4) /* Sep */
-                            calc(var(--week-width) * 5) /* Oct */
-                            calc(var(--week-width) * 4) /* Nov */
-                            calc(var(--week-width) * 5) /* Dec */;
+    grid-template-columns: calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5)
+                            calc(var(--week-width) * 4)
+                            calc(var(--week-width) * 5);
 }
 
 .days,

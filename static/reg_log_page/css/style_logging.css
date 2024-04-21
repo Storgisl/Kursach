@@ -104,7 +104,6 @@ h2 {
     cursor: pointer;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-offset: 3px;
 }
 
 .register-link {
@@ -116,10 +115,8 @@ h2 {
 
 .register-link a {
     color: #000000;
-    text-decoration: none;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-offset: 3px;
 }
 
 .tirn {
@@ -145,7 +142,15 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-decoration: none;
     font-size: 48px;
+    font-family: "Kranky", sans-serif;
+}
+
+.navbar a {
+    color: #000000;
+    text-decoration: none;
+    font-family: "Kranky", sans-serif;
 }
 
 .navbar .nav-btn-box {

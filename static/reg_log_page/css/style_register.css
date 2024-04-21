@@ -57,7 +57,6 @@ h2 {
 .wrapper ul {
     display: flex;
     align-items: center;
-    align-text: center;
     justify-content: flex-start;
     width: 100%;
     margin-bottom: 20px;
@@ -124,7 +123,6 @@ h2 {
     cursor: pointer;
     text-decoration: underline;
     text-decoration-thickness: 2px;
-    text-decoration-offset: 3px;
 }
 
 .social-media-btns {
@@ -161,6 +159,12 @@ h2 {
     align-items: center;
     justify-content: space-between;
     font-size: 48px;
+}
+
+.navbar a {
+    color: #000000;
+    text-decoration: none;
+    font-family: "Kranky", sans-serif;
 }
 
 .navbar .nav-btn-box {

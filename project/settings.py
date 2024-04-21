@@ -86,10 +86,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'admin',
-        'USER': 'admin',
-        'PASSWORD': 'password',
+        'USER': 'postgres', # admin
+        'PASSWORD': 'kivaari', # password
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',  # ''
     }
 } # по дефолту sqlite3 стоит, потом как все +- будет работать воткнем postgre
 

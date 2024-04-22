@@ -28,7 +28,7 @@ urlpatterns = [
     path('', include('videos.urls'), name='videos'),
     path('', include('reg_page.urls'), name='registration'),
     path('', include('log_page.urls'), name='login'),
-] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
      urlpatterns += static(settings.MEDIA_URL,

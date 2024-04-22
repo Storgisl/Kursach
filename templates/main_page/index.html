@@ -1,19 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet"  href="{% static 'main_page/css/main.css' %}">
+    <title>DS&ML</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet"  href="{% static 'profiles/css/profile.css' %}">
+    <link rel="stylesheet"  href="{% static 'main_page/css/main.css' %}">
+    {% block extrahead %}{% endblock %}
+    <!-- <link rel="stylesheet"  href="{% static 'profiles/css/profile.css' %}">
     <link rel="stylesheet"  href="{% static 'videos/css/videos.css' %}">
-    <link rel="stylesheet"  href="{% static 'profiles/css/profile_settings.css' %}">
     <link rel="stylesheet"  href="{% static 'articles/css/articles.css' %}">
+    <link rel="stylesheet"  href="{% static 'profiles/css/profile_settings.css' %}">
+    <link rel="stylesheet"  href="{% static 'reg_log_page/css/style_register.css' %}"> -->
 </head>
 
 <body>
@@ -29,7 +31,7 @@
         </ul>
     </nav>
     {% block content %}
-    {% endblock content %}
+    {% endblock %}
     <div class="footer">
         Kivaari & Storgi ^C 2024
     </div>

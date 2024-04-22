@@ -7,41 +7,40 @@ from django.forms import widgets
 from .models import Profile
 
 
-class UserRegisterForm(forms.ModelForm):
-    password2 = forms.CharField(
-                            widget=forms.PasswordInput(attrs={
-                                'placeholder':'repeat your password',
-                                }), 
-                            required=True)
+class UserRegisterForm(UserCreationForm):#forms.ModelForm
+    birthday = forms.DateField(widget=forms.DateInput(
+                                    format="%Y-%m-%d", 
+                                    attrs={"type": "date",
+                                        "placeholder": 'birthday'}),)
     
     class Meta:
-        model = Profile
-        fields = ("user", "email", "password", "birthday")
-        widgets = {
-            'user': forms.TextInput(attrs={
-                              'placeholder':'Login',
-                           }),
-            'email': forms.TextInput(attrs={
-                                'placeholder':'Email',
-                                }),
-            "password": forms.PasswordInput(attrs={
-                                'placeholder':'password',
-                                }),
-            "birthday": forms.DateInput(
-                                format="%Y-%m-%d", 
-                                attrs={"type": "date",
-                                       "placeholder": 'birthday'}),
-        }     
-        widgets = dict(widgets)
+            model=User
+            fields = ['username','email','password1','password2'] 
+            widgets = {
+                'username': forms.TextInput(attrs={
+                                'placeholder':'Login',
+                            }),
+                'email': forms.EmailInput(attrs={
+                                    'placeholder':'Email',
+                                    }),
+                "password1": forms.PasswordInput(attrs={
+                                    'placeholder':'password',
+                                    }),
+                "password1": forms.PasswordInput(attrs={
+                                    'placeholder':'repeat your password',
+                                    }),
+            }     
+            widgets = dict(widgets)
 
-        required = (
-            "user", 
-            "email", 
-            "password",
-        )
+            required = (
+                "user", 
+                "email", 
+                "password1",
+                "password2",
+            )
     def clean_password2(self):
         cd = self.cleaned_data
-        if cd['password'] != cd['password2']:
+        if cd['password1'] != cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
 

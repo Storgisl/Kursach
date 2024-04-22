@@ -1,7 +1,9 @@
 
 {% extends 'main_page/index.html' %}
 {% load static %}
-
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}"/>
+{% endblock %}
 {% block content %}
     <div class="header">
         <h1>

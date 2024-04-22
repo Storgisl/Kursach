@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'admin',
-        'USER': 'postgres', # admin
-        'PASSWORD': 'kivaari', # password
+        'USER': 'admin', # admin
+        'PASSWORD': 'password', # password
         'HOST': 'localhost',
         'PORT': '5432',  # ''
     }
@@ -128,7 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -153,7 +153,4 @@ COMPRESS_ENABLED = True
 STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
 
 LOGIN_REDIRECT_URL = 'base'
-LOGIN_URL = 'login'
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_URL = 'login' 

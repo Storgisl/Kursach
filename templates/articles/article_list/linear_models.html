@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear models</title>
+    <link rel="stylesheet"  href="linear_models.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\main_page\main.html">DS & ML</a></li>
+            <li class="nav-btn-box">
+                <a class="nav-btn" href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\articles\articles.html">ARTICLES</a>
+                <a class="nav-btn" href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\courses\courses.html">COURSES</a>
+                <a class="nav-btn" href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\videos\videos.html">VIDEOS</a>
+                <a class="nav-btn" href="C:\Users\Kivaari\Desktop\kur\Kursach\templates\profiles\profile_m.html">PROFILE</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>
+        HOW IT WORKS: Linear models
+    </h1>
+
+    <div class="article">
+
+        <p class="paragraph">
+            Why are the models linear?
+        </p>
+
+        <article class="text">
+            Imagine that you have a lot of objects and you would like to assign some value to each object. For example, you have a set of bank card transactions, and you would like to understand which of these transactions were made by scammers. If you divide all operations into two classes and denote legitimate actions with zero and fraudulent actions with one, then you will have the simplest classification task. Imagine a different situation: you have exploration data that you would like to use to assess the prospects of different fields. In this case, based on a set of geological data, your model will, for example, estimate the potential annual profitability of a mine. This is an example of a regression task. The numbers that we want to match objects from our set are sometimes called targets.
+        </article>
+
+        <article class="text">
+            Thus, classification and regression tasks can be formulated as a search for mapping from a set of objects to a set of possible targets.
+            Obviously, just matching some objects to some numbers is a pretty pointless task. We want to quickly detect scammers or decide where to build a mine. So we need some kind of quality criterion. We would like to find a mapping that best approximates the true correspondence between objects and targets. What does "best" mean is a difficult question. We will return to it many times. However, there is a simpler question: among which mappings will we look for the best? There may be many possible mappings, but we can simplify the task for ourselves and agree that we want to look for a solution only in some predefined parameterized family of functions. This entire section will be devoted to the simplest such family — linear functions
+            <em>y = w1x1 + ... + wDxD + w0</em>, where
+        </article>
+
+        <article class="text">
+            <em>y</em> – target variable (target),
+            <em>(x1, ..., xD)</em> – vector corresponding to the sample object (feature vector), 
+            <em>(w1, ..., wD, w0)</em> – model parameters. Signs are also called features. The vector is often called the vector of weights, since the prediction of the model can be viewed as a weighted sum of the features of an object, and the number <em>w0</em> – free coefficient, or bias. A more compact linear model can be written as
+            <em>y = (x, w) + w0</em>
+        </article>
+
+        <p class="paragraph">
+            Remark.
+        </p>
+
+        <article class="text">
+            Let's figure out how such a model will work if <em>D = 1</em>. That is, our objects have exactly one numerical feature by which they differ. Now our linear model will look quite simple: <em>y = x1w1 + w0</em>. For the regression problem, we are now trying to approximate the value of y by some linear function of the variable <em>x</em>. And what will linearity mean for the classification problem? Let's remember the example of searching for fraudulent card transactions. Let's say we know exactly one numerical variable — the transaction volume. For binary classification of transactions into legitimate and potentially fraudulent, we will look for the so–called separating rule: where the value of a function is positive, we will predict one class, where it is negative, another. In our example, the simplest rule would be some kind of threshold value for the volume of transactions, after which it makes sense to mark the transaction as suspicious.
+        </article>
+
+        <div class="txt-img">
+            <img src="" alt="" class="a-img">
+            <p class="img-desc">
+    
+            </p>
+        </div>
+
+        <div class="line-2"></div>
+
+        <div class="info-span-section">
+            <div class="info-span">
+                <div class="first-row">
+                    <h2>AUTHOR :</h2>
+                    <h3>MA DONG-SEOK</h3>
+                </div>
+                <div class="second-row">
+                    <h4>PUBLISH DATE :</h4>
+                    <h5>12 . 4 . 2022</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="line-3"></div>
+
+        <div class="comment-section">
+            <p class="commetns">
+                COMMENTARY SECTION
+            </p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

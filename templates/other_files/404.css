@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Kranky&display=swap');
+
+/* important */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kranky", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #F9F9F9;
+    font-weight: 400;
+}
+
+.head {
+    position: absolute;
+    top: 0;
+}
+
+.back-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 48px;
+    margin-top: 25px;
+}
+
+.main {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 128px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    position: fixed;
+}

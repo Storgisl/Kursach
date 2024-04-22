@@ -25,7 +25,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     width: calc(100% - 562px);
     top: 0;
     font-family: "Kranky", sans-serif;
@@ -110,7 +109,7 @@ h1 {
     border-radius: 20px;
     justify-content: center;
     position: relative;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .searchTerm {
@@ -190,6 +189,7 @@ h2 {
     width: calc(100% - 562px);
     position: relative;
     top: 80px;
+    margin-bottom: 40px;
 }
 
 h3,
@@ -203,6 +203,8 @@ h6 {
 .line-2 {
   width: 100%;
   border: 0.1px solid #000000;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* footer */
@@ -213,6 +215,8 @@ h6 {
     font-size: 14px;
     position: absolute;
     bottom: 0;
+    position: fixed;
+    opacity: 0.2;
 }
 
 /* slider */
@@ -228,6 +232,7 @@ h6 {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
+    padding-bottom: 10px;
 }
 
 .product-container::-webkit-scrollbar {
@@ -243,6 +248,7 @@ h6 {
     border: 0.5px solid #000000;
     border-radius: 40px;
     overflow: hidden; /* Добавлено */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .product-img {

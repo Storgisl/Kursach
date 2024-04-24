@@ -25,7 +25,8 @@ class UserRegisterForm(forms.ModelForm):
         fields = ['username', 'email']
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'username'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'email'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'email',
+                                             'unique': True}),
         }
         widgets = dict(widgets)
 

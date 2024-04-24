@@ -1,6 +1,7 @@
 
 {% extends 'main_page/index.html' %}
 {% load static %}
+{% block title %}Profile{% endblock title %}
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}"/>
 {% endblock %}
@@ -87,9 +88,5 @@
                 </script>
             </ul>
         </div>
-    </div>
-
-    <div class="footer">
-        Kivaari & Storgi ^C 2024
     </div>
 {% endblock %}

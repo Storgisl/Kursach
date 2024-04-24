@@ -154,11 +154,3 @@ input[type="checkbox"] {
     border-radius: 10px;
     padding: 5px;
 }
-
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    position: absolute;
-    bottom: 0;
-}

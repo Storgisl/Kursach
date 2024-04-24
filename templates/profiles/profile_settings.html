@@ -1,6 +1,7 @@
 
 {% extends 'main_page/index.html' %}
 {% load static %}
+{% block title %}Profile settings{% endblock title %}
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile_settings.css' %}"/>
 {% endblock %}
@@ -56,8 +57,4 @@
     </div>
 
     <button type="submit" class="save"> SAVE</button>
-
-    <div class="footer">
-        Kivaari & Storgi ^C 2024
-    </div>
 {% endblock %}

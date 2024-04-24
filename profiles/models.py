@@ -10,7 +10,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.EmailField(default='', unique=True)
     # Remove password field, as it's already handled by the User model
-    birthday = models.DateField(blank=True)
+    birthday = models.DateField(null=True, blank=True, default=timezone.now)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):

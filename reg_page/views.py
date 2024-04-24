@@ -2,24 +2,21 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
-from profiles.forms import UserRegisterForm
+from profiles.forms import UserRegisterForm, ProfileRegisterForm
+from profiles.models import Profile
 
 def register(request):
-    if request.method == 'GET':
-        user_form = UserRegisterForm()
-        return render(request, 
-                      template_name='reg_log_page/registration.html', 
-                      context={'user_form': user_form})
-    
     if request.method == 'POST':
         user_form = UserRegisterForm(request.POST)
+        print(user_form.errors)
         if user_form.is_valid():
-            print(user_form.is_valid())
-            user = user_form.save()
-            login(request, user)
-            return redirect("base")
-        else:
-            messages.error(request, 'Please correct the errors below.')
-            return render(request, 
-                          template_name='reg_log_page/registration.html', 
-                          context={'user_form': user_form})
+            user = user_form.save(commit=False)
+            user.set_password(user_form.cleaned_data['password'])  # Set the password
+            user.save()
+            profile = Profile(user=user)  # Create a Profile
+            profile.save()  
+            messages.success(request, 'You have been registered successfully')
+            return redirect('login')
+    else:
+        user_form = UserRegisterForm()
+    return render(request, 'reg_log_page/registration.html', {'user_form': user_form})

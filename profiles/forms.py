@@ -43,6 +43,23 @@ class UserRegisterForm(forms.ModelForm):
             user.save()
         return user
 
+class ProfileRegisterForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ('birthday',)
+        fields = ['email']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['email'].required = True
+
+    def save(self, commit=True, user=None):
+        profile = super(ProfileRegisterForm, self).save(commit=False)
+        if user:
+            profile.user = user
+        if commit:
+            profile.save()
+        return profile
 class UserLoginForm(forms.Form):
     user = forms.CharField(max_length=30, widget= forms.TextInput(
                             attrs={

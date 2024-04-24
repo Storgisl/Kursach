@@ -22,7 +22,12 @@ class UserRegisterForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
                                     'placeholder': 'username'
     }))
-    birthday = forms.DateField(input_formats=['%d-%m-%Y'])
+    birthday = forms.DateField(input_formats=['%d-%m-%Y'], widget=forms.DateInput(format=["%Y-%m-%d"], attrs={
+                                    'date': 'type',
+    }))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+                                    'placeholder': 'email'
+    }))
     class Meta:
         model = Profile
         fields = ['username', 'email', 'password', 'birthday']
@@ -39,10 +44,10 @@ class UserRegisterForm(forms.ModelForm):
             username=self.cleaned_data['username'],
             email=self.cleaned_data['email'],
             password=self.cleaned_data['password'],
+            birthday=self.cleaned_data['birthday']
         )
         profile = super().save(commit=False)
         profile.user = user
-        profile.birthday = self.cleaned_data['birthday']
         if commit:
             profile.save()
             user.save()

@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # Import User UpdateForm, ProfileUpdatForm
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 # Update it here
 

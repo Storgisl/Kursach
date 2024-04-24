@@ -5,16 +5,6 @@
     <link rel="stylesheet" href="{% static 'reg_log_page/css/style_register.css' %}"/>
 {% endblock %}
 {% block content %}
-      <!-- <nav class="navbar">
-        <ul>
-            <li><a href="{% url 'base'%}">DS & ML</a></li>
-            <li class="nav-btn-box">
-                <button class="nav-btn">RU</button>
-                <button class="nav-btn">EN</button>
-            </li>
-        </ul>
-    </nav> -->
-
     <h2>Learning is easy</h2>
     <p class="tirn">Try it right now!</p>
 
@@ -28,7 +18,7 @@
                     </li>
                     <li class="Reg-txt">Registration</li>
                 </ul>
-            <form action="." method="post">
+            <form method="POST" novalidate>
                 {% csrf_token %}
                 <div class="upper-row-input">
                     <div class="input-box"> 
@@ -42,7 +32,7 @@
                 
                 <div class="lower-row-input">
                     <div class="input-box">
-                        {{ user_form.password1 }}
+                        {{ user_form.password }}
                     </div>
 
                     <div class="input-box">

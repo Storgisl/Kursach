@@ -89,7 +89,7 @@ DATABASES = {
         'USER': 'admin', # admin
         'PASSWORD': 'password', # password
         'HOST': 'localhost',
-        'PORT': '5432',  # ''
+        'PORT': '',  # '5432'
     }
 } # по дефолту sqlite3 стоит, потом как все +- будет работать воткнем postgre
 

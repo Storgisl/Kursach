@@ -27,7 +27,7 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'profiles/profile.html')#, context)
+    return render(request, 'profiles/profile.html', context)
 
 def profile_settings(request):
     return render(request, 'profiles/profile_settings.html')

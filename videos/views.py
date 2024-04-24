@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def videos(request):
-    return render(request, "videos/videos.html")
+    return render(request, "videos/v.html")

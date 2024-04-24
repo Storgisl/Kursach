@@ -1,0 +1,60 @@
+{% extends 'main_page/index.html' %}
+{% load static %}
+{% block title %}Videos{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet"  href="{% static 'videos/css/videos.css' %}">
+{% endblock extrahead %}
+{% block content %}
+
+    <h2>Educational videos</h2>
+
+    <div class="wrap">
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Search...">
+            <button type="submit" class="searchButton">
+                <img src="https://www.svgrepo.com/show/522443/search.svg" class="search-img", alt=" ">
+            </button>
+        </div>
+    </div>
+
+    <div class="video-section">
+        <div class="video-row">
+            <div class="vs" onclick="openPage('https://www.youtube.com/watch?v=XKHEtdqhLK8');">
+                <img src="{% static 'videos/images/1.jpg' %}" alt="" class="video-img">
+                <p class="video-name">PYTHON FULL COURSE</p>
+            </div>
+
+            <div class="vs2" onclick="openPage('https://www.youtube.com/watch?v=rfscVS0vtbw');">
+                <img src="{% static 'videos/images/2.jpg' %}" alt="" class="video-img">
+                <p class="video-name">LEARN PYTHON - FULL COURSE</p>
+            </div>
+        </div>
+
+        <div class="video-row">
+            <div class="vs" onclick="openPage('https://www.youtube.com/watch?v=-TkoO8Z07hI&t=3s');">
+                <img src="{% static 'videos/images/3.jpg' %}" alt="" class="video-img">
+                <p class="video-name">C++ PROGRAMMING COURSE</p>
+            </div>
+
+            <div class="vs2" onclick="openPage('https://www.youtube.com/watch?v=HXV3zeQKqGY');">
+                <img src="{% static 'videos/images/4.jpg' %}" alt="" class="video-img">
+                <p class="video-name">SQL TUTORIAL - FULL DB COURSE</p>
+            </div>
+        </div>
+
+        <div class="video-row">
+            <div class="vs" onclick="openPage('https://www.youtube.com/watch?v=BpPEoZW5IiY&t=78s');">
+                <img src="{% static 'videos/images/5.jpg' %}" alt="" class="video-img">
+                <p class="video-name">LEARN RUST - FULL COURSE</p>
+            </div>
+
+            <div class="vs2" onclick="openPage('https://www.youtube.com/watch?v=8uiZC0l4Ajw');">
+                <img src="{% static 'videos/images/6.jpg' %}" alt="" class="video-img">
+                <p class="video-name">LEARN GO FAST FULL TUTORIAL</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{% static 'videos/script.js' %}"></script>
+{% endblock content%}

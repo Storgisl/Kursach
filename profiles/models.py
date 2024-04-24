@@ -7,9 +7,9 @@ from django.utils import timezone
 #username, email, password, date_registred, profile avatar, history of articles
 
 class Profile(models.Model):
-    username = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.EmailField(default='', unique=True)
-    password = models.CharField(max_length=20)
+    # Remove password field, as it's already handled by the User model
     birthday = models.DateField(blank=True)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 

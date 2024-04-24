@@ -19,18 +19,15 @@ class UserRegisterForm(forms.ModelForm):
                                     'placeholder':'repeat your password',
                                     }),
                                     required=True)
-    username = forms.CharField(widget=forms.TextInput(attrs={
-                                    'placeholder': 'username'
-    }))
-    birthday = forms.DateField(input_formats=['%d-%m-%Y'], widget=forms.DateInput(format=["%Y-%m-%d"], attrs={
-                                    'date': 'type',
-    }))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={
-                                    'placeholder': 'email'
-    }))
+
     class Meta:
-        model = Profile
-        fields = ['username', 'email', 'password', 'birthday']
+        model = User
+        fields = ['username', 'email']
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'username'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'email'}),
+        }
+        widgets = dict(widgets)
 
     def clean_password2(self):
         password1 = self.cleaned_data['password']
@@ -40,16 +37,9 @@ class UserRegisterForm(forms.ModelForm):
         return password2
 
     def save(self, commit=True):
-        user = User.objects.create_user(
-            username=self.cleaned_data['username'],
-            email=self.cleaned_data['email'],
-            password=self.cleaned_data['password'],
-            birthday=self.cleaned_data['birthday']
-        )
-        profile = super().save(commit=False)
-        profile.user = user
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data['password'])
         if commit:
-            profile.save()
             user.save()
         return user
 

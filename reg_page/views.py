@@ -15,7 +15,8 @@ def register(request):
         user_form = UserRegisterForm(request.POST)
         if user_form.is_valid():
             print(user_form.is_valid())
-            user_form.save()
+            user = user_form.save()
+            login(request, user)
             return redirect("base")
         else:
             messages.error(request, 'Please correct the errors below.')

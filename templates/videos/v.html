@@ -7,8 +7,8 @@
 {% block content %}
 
     <h2>Educational videos</h2>
-
-    <div class="wrap">
+    {% for data in video %}
+   <div class="wrap">
         <div class="search">
             <input type="text" class="searchTerm" placeholder="Search...">
             <button type="submit" class="searchButton">
@@ -20,11 +20,15 @@
     <div class="video-section">
         <div class="video-row">
             <div class="vs">
-                <img src="{{ video.preview.url }}" alt="" class="video-img" href="{{ video.url.url }}">
-                <p class="video-name">{{ videos.title.url }}</p>
+                <a href="{{data.url}}" target="_blank">
+                <img src="{{ data.preview.url }}" alt="{{ data.url }}" class="video-img">
+                <p class="video-name">{{ data.title }}</p>
+            </a>
             </div>
 
     </div>
 
     <script src="{% static 'video/script.js' %}"></script>
+{% endfor %}
+ 
 {% endblock content%}

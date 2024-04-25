@@ -11,7 +11,7 @@ class Profile(models.Model):
     email = models.EmailField(default='', unique=True)
     # Remove password field, as it's already handled by the User model
     birthday = models.DateField(null=True, blank=True, default=timezone.now)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='default_profile.jpg', upload_to='profile_pics')
 
     def __str__(self):
         return f'{self.user.username} Profile'

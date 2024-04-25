@@ -1,25 +1,740 @@
 {% extends 'main_page/index.html' %}
-
-{% block title %}
-Статьи - ML & DS Site
-{% endblock %}
-<!-- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet"  href="{% static 'articles/css/articles.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kranky&display=swap" rel="stylesheet">
-</head> -->
-
+{% load static %}
+{% block title %}Articles{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet"  href="{% static 'articles/css/a.css' %}">
+{% endblock extrahead %}
 {% block content %}
-<section>
-    <h2>Статьи по машинному обучению и науке о данных</h2>
-    <ul>
-        {% for article in articles %}
-        <li><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></li>
-        {% endfor %}
-    </ul>
-</section>
-{% endblock %}
+    <h1>
+        Articles for every taste
+    </h1>
+
+    <div class="wrap">
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="Search...">
+            <button type="submit" class="searchButton">
+                <img src="https://www.svgrepo.com/show/522443/search.svg" class="search-img", alt=" ">
+            </button>
+        </div>
+    </div>
+  
+    <div class="sorting">
+      <h2>Sorting:</h2>
+      <select class="sort">
+        <option selected>none</option>
+        <option value="1">latest</option>
+        <option value="2">oldest</option>
+        <option value="3">popular</option>
+        <option value="4">most likes</option>
+      </select>
+    </div>
+    <div class="line"></div>
+  
+  
+    <div class="main">
+        <h3>CLASSIC MACHINE LEARNING</h3>
+      
+        <div class="line-2"></div>
+      
+        <section class="product">
+            <button class="pre-btn"><img src="{% static 'articles/images/prev.svg' %}" alt="" class="bim"></button>
+            <button class="nxt-btn"><img src="{% static 'articles/images/next.svg' %}" alt="" class="bim"></button>
+
+            <div class="product-container">
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/articles/article_list/linear_models.html';">
+                    <div class="product-img">
+                        <img src="c_ml_linear.jpg" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: Linear models</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="GB.png" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: Gradient Boosting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="SVM.jpg" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: SVM`s</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="naiveb.png" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: Naive Bayes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="metrics.png" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: Metrics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="DT.jpg" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: Decision tree</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="ensemble.jpg" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: Ensemble</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="crossval.webp" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: Cross validation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = '';">
+                    <div class="product-img">
+                        <img src="united.jpg" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: United models</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 3</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <div class="main">
+        <h3>COMPUTER VISION</h3>
+      
+        <div class="line-2"></div>
+      
+        <section class="product">
+            <button class="pre-btn"><img src="prev.svg" alt="" class="bim"></button>
+            <button class="nxt-btn"><img src="next.svg" alt="" class="bim"></button>
+
+            <div class="product-container">
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 11</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 13</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 14</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 16</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 17</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="main">
+        <h3>DATA ANALYSIS</h3>
+      
+        <div class="line-2"></div>
+      
+        <section class="product">
+            <button class="pre-btn"><img src="prev.svg" alt="" class="bim"></button>
+            <button class="nxt-btn"><img src="next.svg" alt="" class="bim"></button>
+
+            <div class="product-container">
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 11</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 13</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 14</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 16</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 17</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="main">
+        <h3>DATA ENGINEERING</h3>
+      
+        <div class="line-2"></div>
+      
+        <section class="product">
+            <button class="pre-btn"><img src="prev.svg" alt="" class="bim"></button>
+            <button class="nxt-btn"><img src="next.svg" alt="" class="bim"></button>
+
+            <div class="product-container">
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 11</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 13</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 14</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 16</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 17</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href = 'file:///C:/Users/Kivaari/Desktop/kur/Kursach/templates/other_files/404.html';">
+                    <div class="product-img">
+                        <img src="" class="product-thumb" alt="">
+                        <div class="text-span">
+                            <span class="a-name">HOW IT WORKS: 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="{% static 'articles/script.js' %}"></script>
+{% endblock content%}

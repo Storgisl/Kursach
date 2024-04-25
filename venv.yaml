@@ -16,3 +16,4 @@ dependencies:
     - django-compressor==4.4
     - Pillow==10.2.0
     - django-crispy-forms==2.1
+    - markdown==3.6

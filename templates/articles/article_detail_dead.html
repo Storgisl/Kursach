@@ -1,0 +1,12 @@
+{% extends 'main_page/index.html' %}
+{% load compress %}
+{% load static %}
+
+{% block title %}
+ML & DS Site
+{% endblock %}
+
+{% block content %}
+      <h1>{{ markdown_content.title }}</h1>
+      <p>{{ markdown_content.content|safe }}</p>
+{% endblock %}

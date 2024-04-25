@@ -6,10 +6,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.forms import ValidationError, widgets
 from .models import Profile
 
-
-from django import forms
-from .models import Profile
-
 class UserRegisterForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={
                                     'placeholder':'password',
@@ -61,6 +57,7 @@ class ProfileRegisterForm(forms.ModelForm):
         if commit:
             profile.save()
         return profile
+    
 class UserLoginForm(forms.Form):
     user = forms.CharField(max_length=30, widget= forms.TextInput(
                             attrs={

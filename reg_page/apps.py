@@ -7,6 +7,3 @@ class RegPageConfig(AppConfig):
 
 class AppsConfig(AppConfig):
     name = 'apps'
-
-    def ready(self):
-        import profiles.signals

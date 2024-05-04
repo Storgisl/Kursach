@@ -16,18 +16,15 @@
         </div>
     </div>
     <div class="video-section">
-    
     {% for data in video %}
         <div class="video-row">
             <div class="vs">
+            
                 <a href="{{data.url}}" target="_blank">
                 <img src="{{ data.preview.url }}" alt="{{ data.url }}" class="video-img">
                 <p class="video-name">{{ data.title }}</p>
             </a>
             </div>
-
-    
-
     <script src="{% static 'video/script.js' %}"></script>
     {% endfor %}
  </div>

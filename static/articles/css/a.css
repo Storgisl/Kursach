@@ -29,7 +29,7 @@ body {
     top: 0;
     font-family: "Kranky", sans-serif;
     position: fixed;
-    background: #F9F9F9; /* fixed */
+    background: #F9F9F9;
     z-index: 9999;
     box-shadow: 0px 30px 12px rgba(249, 249, 249, 1);
 }
@@ -295,7 +295,7 @@ h6 {
 .pre-btn {
     border: none;
     background: transparent;
-    position: absolute;
+    position: sticky;
     display: flex;
     top: 0;
     justify-content: center;

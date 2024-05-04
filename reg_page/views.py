@@ -11,9 +11,9 @@ def register(request):
         print(user_form.errors)
         if user_form.is_valid():
             user = user_form.save(commit=False)
-            user.set_password(user_form.cleaned_data['password'])  # Set the password
+            user.set_password(user_form.cleaned_data['password'])
             user.save()
-            profile = Profile(user=user)  # Create a Profile
+            profile = Profile(user=user)
             profile.save()  
             messages.success(request, 'You have been registered successfully')
             return redirect('login')

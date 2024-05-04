@@ -1,56 +1,85 @@
 {% extends 'main_page/index.html' %}
 {% load static %}
+
 {% block title %}Articles{% endblock title %}
+
 {% block extrahead %}
     <link rel="stylesheet"  href="{% static 'articles/css/a.css' %}">
 {% endblock extrahead %}
+
 {% block content %}
-    <h1>
-        Articles for every taste
-    </h1>
+    <h1>Articles for every taste</h1>
 
     <div class="wrap">
         <div class="search">
             <input type="text" class="searchTerm" placeholder="Search...">
             <button type="submit" class="searchButton">
-                <img src="https://www.svgrepo.com/show/522443/search.svg" class="search-img", alt=" ">
+                <img src="https://www.svgrepo.com/show/522443/search.svg" class="search-img" alt=" ">
             </button>
         </div>
     </div>
-  
+
     <div class="sorting">
-      <h2>Sorting:</h2>
-      <select class="sort">
-        <option selected>none</option>
-        <option value="1">latest</option>
-        <option value="2">oldest</option>
-        <option value="3">popular</option>
-        <option value="4">most likes</option>
-      </select>
+        <h2>Sorting:</h2>
+        <select class="sort">
+            <option selected>none</option>
+            <option value="1">latest</option>
+            <option value="2">oldest</option>
+            <option value="3">popular</option>
+            <option value="4">most likes</option>
+        </select>
     </div>
     <div class="line"></div>
-  
-  
+
     <div class="main">
-        <h3>CLASSIC MACHINE LEARNING</h3>
-      
-        <div class="line-2"></div>
-        
-        <section class="product">
-            <button class="pre-btn"><img src="{% static 'articles/images/prev.svg' %}" alt="" class="bim"></button>
-            <button class="nxt-btn"><img src="{% static 'articles/images/next.svg' %}" alt="" class="bim"></button>
-
-            <div class="product-container">
-                <div class="product-card" onclick="window.location.href = ''">
-                    <div class="product-img">
-                        <img src="{{ article.preview.url }}" class="product-thumb" alt="">
-                        <div class="text-span">
-                            <span class="a-name">HOW IT WORKS: Linear models</span>
+        {% regroup articles by tag as tags %}
+        {% for tag in tags %}
+            {% with product_container=tag.grouper.product_container %}
+                {% if product_container %}
+                    <h3>{{ tag.grouper }}</h3>
+                    <div class="line-2"></div>
+                    <section class="product">
+                        <div class="product-container" id="{{ product_container.id }}">
+                            <button class="pre-btn"><img src="{% static 'articles/images/prev.svg' %}" alt="" class="bim"></button>
+                            <button class="nxt-btn"><img src="{% static 'articles/images/next.svg' %}" alt="" class="bim"></button>
+                            {% for data in tag.list %}
+                                <div class="product-card">
+                                    <div class="product-img">
+                                        <a href="{% url 'articles_detail' data.id %}" target="_self">
+                                            <img src="{{ data.preview.url }}" alt="{{ data.url }}" class="product-thumb">
+                                            <div class="text-span">
+                                                <span class="a-name">{{ data.title }}</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
                         </div>
-                    </div>
-                </div>
-
+                    </section>
+                {% else %}
+                    <h3>{{ tag.grouper }}</h3>
+                    <div class="line-2"></div>
+                    <section class="product">
+                        <div class="product-container">
+                            <button class="pre-btn"><img src="{% static 'articles/images/prev.svg' %}" alt="" class="bim"></button>
+                            <button class="nxt-btn"><img src="{% static 'articles/images/next.svg' %}" alt="" class="bim"></button>
+                            {% for data in tag.list %}
+                                <div class="product-card">
+                                    <div class="product-img">
+                                        <a href="{% url 'articles_detail' data.id %}" target="_self">
+                                            <img src="{{ data.preview.url }}" alt="{{ data.url }}" class="product-thumb">
+                                            <div class="text-span">
+                                                <span class="a-name">{{ data.title }}</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    {% endif %}
+                    {% endwith %}
+        {% endfor %}
     </div>
-    {% endblock content %}
 
-   <!-- {% url 'articles_detail' articles_detail.id %} -->
+{% endblock content %}
